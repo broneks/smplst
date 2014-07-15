@@ -1,0 +1,10 @@
+@mixin hover-up() {
+	-webkit-transition: all .1s linear; 
+	-moz-transition: all .1s linear;
+	-o-transition: all .1s linear;  
+	transition: all .1s linear;
+
+	&:hover {
+		margin-top: -3px;
+	}
+}

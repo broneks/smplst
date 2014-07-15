@@ -1,0 +1,33 @@
+#top-header {
+	h1 {
+		margin: 0;
+		font-size: 2em;
+		padding: 15px 0;
+		background-color: $darkblue;
+
+		a {
+			color: #fff;
+		}
+
+		span {
+			color: lighten($darkblue, 30%);
+		}
+	}
+
+	i {
+		opacity: .8; 
+		vertical-align: middle;
+		@include hover-up();
+	}
+
+	#top-toolbar {
+		background-color: $lightblue;
+
+		ul {
+			margin: 0;
+			padding: 24.5px 0;
+			border-left: 2px solid $darkblue;
+			list-style: none;
+		}
+	}
+}
