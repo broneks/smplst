@@ -2,7 +2,7 @@
 	h1 {
 		margin: 0;
 		font-size: 2em;
-		padding: 15px 0;
+		padding: 20px 0;
 		background-color: $darkblue;
 
 		a {
@@ -14,8 +14,8 @@
 		}
 	}
 
-	i {
-		opacity: .8; 
+	// icons
+	i { 
 		vertical-align: middle;
 		@include hover-up();
 	}
@@ -25,7 +25,7 @@
 
 		ul {
 			margin: 0;
-			padding: 24.5px 0;
+			padding: 29.5px 0;
 			border-left: 2px solid $darkblue;
 			list-style: none;
 		}
