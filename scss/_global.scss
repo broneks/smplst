@@ -23,7 +23,7 @@ $bordergray: darken($midgray, 10%);
 	max-width: initial;
 }
 
-.noPad { padding: 0; }
+.noPadding { padding: 0; }
 
 
 //-- Avatars --//
@@ -47,6 +47,10 @@ img {
 
 //-- General styles --//
 
+body {
+	background: url(../img/stripes.png) repeat;
+}
+
 body,
 h1, h4, h5, h6,
 p, span, textarea, input[type=text] {
@@ -66,16 +70,21 @@ textarea, input[type=text] {
 	font-size: 1em; 
 }
 
+ul {
+	margin: 0; 
+	list-style: none;
+}
+
 
 //-- Main Content Area --//
 
 // Padding
 
 #side-menu {
-	padding: 30px 25px;
+	padding: 0 0 20px;
 }
 
-#controls {
+#middle {
 	h2      { padding: 30px 25px; }
 	#search { padding: 15px 25px; }
 
@@ -84,7 +93,7 @@ textarea, input[type=text] {
 
 #details {
 	article { padding: 30px 25px 0; }
-	#reply  { padding: 0 25px 60px; }
+	#reply  { padding: 0 25px 65px; }
 }
 
 
@@ -94,14 +103,14 @@ textarea, input[type=text] {
 	background-color: $darkgray;
 }
 
-#controls {
+#middle {
 	background-color: $midgray;
 	border-right: 1px solid $bordergray;
 
 	#items-list { 
 		background-color: $lightergray; 
 		
-		li + li { border-top: 1px solid $bordergray; }
+		li { border-bottom: 1px solid $bordergray; }
 	}
 }
 

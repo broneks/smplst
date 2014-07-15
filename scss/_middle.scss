@@ -1,7 +1,5 @@
-#controls {
-	h2 {
-		font-size: 1.5em;
-	}
+#middle {
+	h2 { font-size: 1.5em; }
 
 	#search {
 		border-top: 1px solid $bordergray;
@@ -13,6 +11,7 @@
 			font-size: 1.1em;
 		}
 
+		// Search Input Field
 		#search-input {
 			display: inline-block;
 			width: 84%;
@@ -20,17 +19,27 @@
 			padding-right: 0;
 			box-shadow: none;
 			border: 0;
+			font-weight: bold;
 			letter-spacing: 0.07em;
 			border-bottom: 2px solid $bordergray;
 			background-color: transparent;
 		}
 	}
 
-	#items-list {
-		margin: 0;
-		list-style: none;
+	#items-list li {
+		input[type=checkbox] { margin-right: 5px; }
+			
+		h5, h6 { display: inline-block; }
 
-		li {
+		h5 { font-weight: bold; }
+
+		time { margin-top: 3.2px; }
+
+		i {
+			margin-right: 5px;
+			font-size: 0.9em;
 		}
+
+		span { font-style: italic; }
 	}
 }

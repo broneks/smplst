@@ -1,0 +1,81 @@
+#side-menu {
+	i {
+		opacity: 0.2;
+	}
+
+	// First-Level List Items
+	li {
+		padding: 33px 0;
+		text-align: center;
+
+		p { margin: 0; }
+
+		& + li { margin-top: 2px; }
+
+		&:hover { background-color: $darkergray; }
+	}
+
+	#email { 
+
+		// The Email Item is Selected
+		background-color: $darkergray; 
+
+		#compose-new {
+			width: 100%;
+			margin-top: 20px;
+			padding: 10px 5px;
+			color: #fff;
+			background-color: $lightblue;
+
+			&:hover { 
+				color: $midgray;
+				background-color: $darkblue; 
+			}
+		}
+		
+		#total-messages {
+			margin-right: 10px;
+			padding: 2px 5px;
+			font-size: 0.9em;
+			font-weight: bold;
+			color: #fff;
+			background-color: $lightblue;
+			@include border-radius(3px);
+		}
+	}
+
+	// Second-Level List Items (sub-items)
+	.sub-items {
+		margin-left: 0;
+		background-color: $darkergray;
+
+		li {
+			padding: 0;
+			text-align: left;
+
+			a {
+				padding: 10px 25px;
+				display: block;
+
+				&:hover {
+					color: $midgray;
+					background-color: $darkgray;
+				}
+			}
+		}
+	}
+
+	// My Account Link
+	#my-account {
+		width: 100%;
+		margin-top: 30px;
+		padding: 10px;
+		background: transparent;
+		color: lighten($darkgray, 20%);
+		border: 2px solid lighten($darkgray, 10%);
+
+		&:hover {
+			color: $midgray;
+		}
+	}
+}

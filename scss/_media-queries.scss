@@ -1,6 +1,6 @@
 
 @media screen and (max-width: 1250px) {
-	#controls {
+	#middle {
 		h2 {
 			text-align: center;
 			font-size: 1.3em;
@@ -8,42 +8,46 @@
 	}
 
 	#details {
-		h3 {
-			font-size: 1.2em;
-		}
+		h3 { font-size: 1.2em; }
 
 		#user-info {
-			h4 {
-				font-size: 1em;
-			}
-			#date {
-				font-size: 0.9em;
-			}
+			h4 { font-size: 1em; }
+			
+			#date { font-size: 0.9em; }
 		}
 	}
 }
 
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 1024px) {
 	#top-header #top-toolbar ul { border-left: 0; }
 
-	#controls #items-list {
-		max-height: 200px;
+	#middle #items-list {
+		max-height: 273px;	// 3 list items tall (71 * 3)
 		overflow-y: auto;
 		background-color: #fff;
 	}
 
-	#details { border-top: 2px solid $darkblue; }
+	#details { border-top: 3px solid $darkblue; }
 
 	#reply {
-		#answering, #forward {
-			text-align: center;
-		}
+		#answering, #forward { text-align: center; }
 	}
 }
 
 @media screen and (max-width: 641px) {
-	p, textarea, span, button, input[type=text] { 
+	p, h6, textarea, span, button, input[type=text] { 
 		font-size: 0.9em !important; 
 	}
 
+	#side-menu {
+		li { padding-bottom: 10px; }
+
+		.sub-items li {
+			text-align: center;
+			
+			a { padding: 7px 3px; }
+		}
+
+		#email #compose-new { padding: 7px 3px; }
+	}
 }
