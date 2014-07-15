@@ -1,8 +1,27 @@
 
-@media screen and (max-width: 1024px) {
-	#top-header #top-toolbar ul { border-left: 0; }
+@media screen and (max-width: 1250px) {
+	#details {
+		h2 {
+			font-size: 1.2em;
+		}
+
+		#user-info {
+			h3 {
+				font-size: 1em;
+			}
+			#date {
+				font-size: 0.9em;
+			}
+		}
+	}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1025px) {
+	#top-header #top-toolbar ul { border-left: 0; }
+
+}
+
+@media screen and (max-width: 641px) {
+	p { font-size: 0.9em !important; }
 	
 }

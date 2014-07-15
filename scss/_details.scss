@@ -1,24 +1,35 @@
 #details {
+	// Paperclip icons 
+	.icon-paperclip {
+		padding-right: 2px;
+		opacity: 0.3;
+		font-size: 0.8em;
+	}
+
+	// Title of message
 	h2 {
 		display: inline-block;
-		padding-left: 10px;
+		padding-left: 2%;
 		font-size: 1.4em;
 	}
 
+	// Reply and close icons
 	#options {
-		padding: 2px 10px 0 0;
+		margin-top: 10px;
+		padding: 2px 0 0 0;
 
-		a {
-			padding: 10px;
+		a:first-child {
+			margin-left: 20px;
 		}
 	}
 	
 	#user-info {
-		margin: 10px 0;
+		margin: 20px 0;
 		padding: 10px 0;
-		border-top: 2px solid $midgray;
-		border-bottom: 2px solid $midgray;
-
+		border-top: 1px solid $midgray;
+		border-bottom: 1px solid $midgray;
+		
+		// Username
 		h3 {
 			padding: 5px 0 0 10px;
 			font-size: 1.2em;
@@ -29,12 +40,31 @@
 			}
 		}
 
+		// Date message was sent
 		#date {
-			padding: 15px 0;
+			padding: 12px 0 0 0;
+		}
+	}
 
-			i {
-				font-size: 0.8em;
-			}
+	// files enclosed button
+	#files-enclosed {
+		width: 100%;
+		padding: 16px 6px;
+		background-color: $midgray;
+		border: 1px solid $bordergray;
+
+		&:hover, &:focus {
+			background-color: darken($midgray, 20%);
+		}
+	}
+
+	// reply section
+	#reply {
+		background-color: $lightgray;
+		border-top: 1px solid $bordergray;
+
+		textarea {
+			padding: 15px;
 		}
 	}
 }

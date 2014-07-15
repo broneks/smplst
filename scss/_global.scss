@@ -1,18 +1,19 @@
-//-- variables --//
+//-- Variables --//
 
-// blues
+// Blues
 $lightblue: #45C8DC;
 $darkblue:  #3EB4C6;
 
-// grays
+// Grays
 $lightergray: #F7F8F8;
-$lightgray:   #EFF0F0;
-$midgray:     #F1F2F2;
+$lightgray:     #F1F2F2;
+$midgray:   #EFF0F0;
 $darkgray:    #262A33;
 $darkergray:  #1D2027;
 
+$bordergray: darken($midgray, 10%);
 
-//-- classes --//
+//-- Classes --//
 
 .fullWidth {
 	width: 100%;
@@ -21,28 +22,52 @@ $darkergray:  #1D2027;
 	max-width: initial;
 }
 
+.noPad { padding: 0; }
 
-//-- general --//
+//-- Avatars --//
+
+img {
+	width: 40px;
+	height: 40px;
+
+	&.brad { background: url(../img/avatars.jpg) 0 0; }
+	&.jeremy { background: url(../img/avatars.jpg) 0 -80px; }	
+	&.jack { background: url(../img/avatars.jpg) -80px -40px; }
+	&.george { background: url(../img/avatars.jpg) -320px -40px; }
+	&.anthony { background: url(../img/avatars.jpg) -40px 0; }
+	&.jane { background: url(../img/avatars.jpg) -240px -120px; }
+	&.anna { background: url(../img/avatars.jpg) 0px -40px; }
+	&.michelle { background: url(../img/avatars.jpg) -120px -120px; }
+	&.safira { background: url(../img/avatars.jpg) -520px -160px; }
+	&.sarah { background: url(../img/avatars.jpg) -440px -120px; }
+}
+
+//-- General --//
 
 body,
 h1, h3, h4, h5, h6,
-p, span {
+p, span, textarea {
 	color: #999;
 }
-h2 { color: #555; }
+
+h2, button { color: #555; }
+
+a { color: inherit;}
+
+i { opacity: .8; }
 
 
-i {
-	opacity: .8;
-}
-
-
-//-- main content --//
+//-- Main content area --//
 
 #side-menu,
-#controls,
-#details {
-	padding: 30px 20px;
+#controls {
+	padding: 30px 25px;
+}
+#details article {
+	padding: 30px 25px 0;
+}
+#details #reply {
+	padding: 20px 25px;
 }
 
 #side-menu {
@@ -50,7 +75,8 @@ i {
 }
 
 #controls {
-	background-color: $lightgray;
+	background-color: $midgray;
+	border-right: 1px solid $bordergray;
 }
 
 #details {

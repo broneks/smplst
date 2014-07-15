@@ -22,7 +22,8 @@
                   		<span>Simpl</span>est
                   	</a>
                   </h1>
-      			
+      		
+                  <!-- Toolbar -->
                   <nav id="top-toolbar" class="large-10 columns clearfix">
                   	<ul class="large-5 small-12 columns right">
                   		<li class="small-2 small-offset-1 columns">
@@ -69,14 +70,15 @@
             </div>
 
             <!-- Details -->
-            <div id="details" class="large-6 columns">
+            <div id="details" class="large-6 columns noPad">
                   <article>
-                        <header class="row">
+                        <header class="row collapse">
                               <div class="medium-9 columns">
                                     <a href="#">
                                           <i class="icon icon-dislikes"></i>
                                     </a>
 
+                                    <!-- Title -->
                                     <h2>The brand new season of Top Gear</h2>
                               </div>
 
@@ -90,19 +92,49 @@
                               </div>
                         </header>
 
-                        <div id="user-info" class="clearfix">
-                              <img src="img/avatar.gif" class="left" height="40" width="40" alt="avatar">
+                        <section id="user-info" class="row collapse">
+                              <!-- Avatar -->
+                              <img src="img/trans.gif" class="jeremy left" height="40" width="40" alt="avatar">
                               
-                              <h3 class="left">Jeremy Clarkson to <span>me</span></h3>
+                              <!-- Username -->
+                              <h3 class="left">
+                                    <a href="#">Jeremy Clarkson</a> 
+                                    to 
+                                    <span>me</span>
+                              </h3>
 
+                              <!-- Date -->
                               <span id="date" class="right">
-                                    <i class="icon icon-link"></i>
+                                    <i class="icon icon-paperclip"></i>
                               
                                     <time datetime="2013-12-15 19:00">December 15, 2013</time>
                               </span>
-                        </div>
+                        </section>
                         
+                        <!-- Message -->
+                        <div id="message" class="row collapse">
+                              <p>Hi Greg,</p>
+                              
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam velit itaque iste, doloribus, ab quae, explicabo similique numquam porro laborum ex impedit laboriosam ullam laudantium voluptatem minima molestias vel ut! Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+                              <p>Cheers</p>
+                        </div>
+
+                        <!-- Files Enclosed Button -->
+                        <div class="row collapse">
+                              <div class="small-9 small-centered medium-4 large-3 columns">
+                                    <button id="files-enclosed" class="radius">
+                                          <i class="icon icon-paperclip"></i>
+                                          Files enclosed
+                                    </button>
+                              </div>
+                        </div>
                   </article>
+
+                  <!-- Reply Section -->
+                  <div id="reply">
+                        <textarea id="x" cols="30" rows="10">Hello Jeremy, How are you?</textarea>
+                  </div>
             </div>
       </div>
 
