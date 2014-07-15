@@ -6,12 +6,13 @@ $darkblue:  #3EB4C6;
 
 // Grays
 $lightergray: #F7F8F8;
-$lightgray:     #F1F2F2;
-$midgray:   #EFF0F0;
+$lightgray:   #F1F2F2;
+$midgray:     #EFF0F0;
 $darkgray:    #262A33;
 $darkergray:  #1D2027;
 
 $bordergray: darken($midgray, 10%);
+
 
 //-- Classes --//
 
@@ -24,25 +25,27 @@ $bordergray: darken($midgray, 10%);
 
 .noPad { padding: 0; }
 
+
 //-- Avatars --//
 
 img {
 	width: 40px;
 	height: 40px;
 
-	&.brad { background: url(../img/avatars.jpg) 0 0; }
-	&.jeremy { background: url(../img/avatars.jpg) 0 -80px; }	
-	&.jack { background: url(../img/avatars.jpg) -80px -40px; }
-	&.george { background: url(../img/avatars.jpg) -320px -40px; }
-	&.anthony { background: url(../img/avatars.jpg) -40px 0; }
-	&.jane { background: url(../img/avatars.jpg) -240px -120px; }
-	&.anna { background: url(../img/avatars.jpg) 0px -40px; }
+	&.brad     { background: url(../img/avatars.jpg) 0 0; }
+	&.jeremy   { background: url(../img/avatars.jpg) 0 -80px; }	
+	&.jack     { background: url(../img/avatars.jpg) -80px -40px; }
+	&.george   { background: url(../img/avatars.jpg) -320px -40px; }
+	&.anthony  { background: url(../img/avatars.jpg) -40px 0; }
+	&.jane     { background: url(../img/avatars.jpg) -240px -120px; }
+	&.anna     { background: url(../img/avatars.jpg) 0px -40px; }
 	&.michelle { background: url(../img/avatars.jpg) -120px -120px; }
-	&.safira { background: url(../img/avatars.jpg) -520px -160px; }
-	&.sarah { background: url(../img/avatars.jpg) -440px -120px; }
+	&.safira   { background: url(../img/avatars.jpg) -520px -160px; }
+	&.sarah    { background: url(../img/avatars.jpg) -440px -120px; }
 }
 
-//-- General --//
+
+//-- General styles --//
 
 body,
 h1, h3, h4, h5, h6,
@@ -52,12 +55,18 @@ p, span, textarea {
 
 h2, button { color: #555; }
 
-a { color: inherit;}
+a {
+    color: inherit;
 
-i { opacity: .8; }
+    &:hover { color: #555; }
+}
+
+i { opacity: .5; }
+
+textarea { font-size: 1em; }
 
 
-//-- Main content area --//
+//-- Main Content Area --//
 
 #side-menu,
 #controls {
@@ -67,7 +76,7 @@ i { opacity: .8; }
 	padding: 30px 25px 0;
 }
 #details #reply {
-	padding: 20px 25px;
+	padding: 0 25px 60px;
 }
 
 #side-menu {

@@ -19,9 +19,16 @@
 @media screen and (max-width: 1025px) {
 	#top-header #top-toolbar ul { border-left: 0; }
 
+	#reply {
+		#answering, #forward {
+			text-align: center;
+		}
+	}
 }
 
 @media screen and (max-width: 641px) {
-	p { font-size: 0.9em !important; }
-	
+	p, textarea, span, button { 
+		font-size: 0.9em !important; 
+	}
+
 }

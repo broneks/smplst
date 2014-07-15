@@ -6,6 +6,8 @@
 	<meta name="author" content="Bronek Szulc">
 	<title>Simplest | Message Client</title>
 
+      <link rel="shortcut icon" href="img/favicon.ico">
+
 	<link rel="stylesheet" href="css/vendor/normalize.css">
 	<link rel="stylesheet" href="css/vendor/foundation.min.css">
 	<link rel="stylesheet" href="css/glyphicons.css">
@@ -23,7 +25,7 @@
                   	</a>
                   </h1>
       		
-                  <!-- Toolbar -->
+                  <!-- Top Toolbar -->
                   <nav id="top-toolbar" class="large-10 columns clearfix">
                   	<ul class="large-5 small-12 columns right">
                   		<li class="small-2 small-offset-1 columns">
@@ -31,21 +33,25 @@
                   				<i class="icon icon-inbox icon-white" title="inbox"></i>
                   			</a>
                   		</li>
+
                   		<li class="small-2 columns">
                   			<a href="#">
                   				<i class="icon icon-parents" title="contacts"></i>
                   			</a>
                   		</li>
+
                   		<li class="small-2 columns">
                   			<a href="#">
                   				<i class="icon icon-bell" title="notifications"></i>
                   			</a>
                   		</li>
+
                   		<li class="small-2 columns">
                   			<a href="#">
                   				<i class="icon icon-search" title="search"></i>
                   			</a>
                   		</li>
+
                   		<li class="small-2 end columns">
                   			<a href="#">
                   				<i class="icon icon-cogwheel" title="settings"></i>
@@ -72,27 +78,32 @@
             <!-- Details -->
             <div id="details" class="large-6 columns noPad">
                   <article>
-                        <header class="row collapse">
-                              <div class="medium-9 columns">
-                                    <a href="#">
-                                          <i class="icon icon-dislikes"></i>
-                                    </a>
+                        <header class="row collapse clearfix">
 
-                                    <!-- Title -->
-                                    <h2>The brand new season of Top Gear</h2>
-                              </div>
-
-                              <div id="options" class="medium-3 columns clearfix">
+                              <!-- Reply and Close Icons -->
+                              <div id="options" class="medium-3 columns right clearfix">
                                     <a href="#" class="right">
-                                          <i class="icon icon-remove"></i>
-                                    </a>      
+                                          <i class="icon icon-remove_2"></i>
+                                    </a> 
+                                         
                                     <a href="#" class="right">
                                           <i class="icon icon-unshare"></i>
                                     </a>
                               </div>
+
+                              <!-- Star and Message Title -->
+                              <div class="medium-9 columns left">
+                                    <a href="#">
+                                          <i class="icon icon-dislikes"></i>
+                                    </a>
+
+                                    <h2>The brand new season of Top Gear</h2>
+                              </div>
                         </header>
 
+                        <!-- User Info -->
                         <section id="user-info" class="row collapse">
+
                               <!-- Avatar -->
                               <img src="img/trans.gif" class="jeremy left" height="40" width="40" alt="avatar">
                               
@@ -111,8 +122,8 @@
                               </span>
                         </section>
                         
-                        <!-- Message -->
-                        <div id="message" class="row collapse">
+                        <!-- Message Content -->
+                        <div id="message-content" class="row collapse">
                               <p>Hi Greg,</p>
                               
                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam velit itaque iste, doloribus, ab quae, explicabo similique numquam porro laborum ex impedit laboriosam ullam laudantium voluptatem minima molestias vel ut! Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -122,7 +133,7 @@
 
                         <!-- Files Enclosed Button -->
                         <div class="row collapse">
-                              <div class="small-9 small-centered medium-4 large-3 columns">
+                              <div class="small-7 small-centered medium-4 large-3 columns">
                                     <button id="files-enclosed" class="radius">
                                           <i class="icon icon-paperclip"></i>
                                           Files enclosed
@@ -133,7 +144,34 @@
 
                   <!-- Reply Section -->
                   <div id="reply">
-                        <textarea id="x" cols="30" rows="10">Hello Jeremy, How are you?</textarea>
+
+                        <!-- Answering and Forward -->
+                        <div class="row collapse">
+                              <a href="#" id="answering" class="small-6 large-2 text-center left columns">Answering</a>
+
+                              <a href="#" id="forward" class="small-6 large-2 text-center left columns">Forward</a>
+                        </div>
+      
+                        <!-- Input Area -->
+                        <div id="inputarea">
+                              <textarea cols="30" rows="10">Hello Jeremy, How are you?</textarea>
+
+                              <!-- Downloading Files -->
+                              <div id="downloading" class="row collapse">
+                                    <span id="filename" class="medium-3 columns">My file enclosed.pdf</span>
+
+                                    <!-- Progress Bar -->
+                                    <div id="progress" class="medium-9 columns">
+                                          <div id="progress-bar-outer">
+                                                <div id="progress-bar-inner"></div>
+                                          </div>
+
+                                          <a href="#" id="cancel-download">
+                                                <i class="icon icon-remove_2"></i>
+                                          </a>
+                                    </div>
+                              </div>
+                        </div>
                   </div>
             </div>
       </div>

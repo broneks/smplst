@@ -1,5 +1,39 @@
+// Hover Up Effect
+
 @mixin hover-up() {
 	&:hover {
 		margin-top: -4px;
 	}
+}
+
+// Border Radius
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+
+// Triangles
+
+@mixin triangle-up($size, $colour, $borderColour) {
+	height: 0;
+	width: 0;
+	content: " ";
+	border-left: solid transparent $size;
+	border-right: solid transparent $size;
+	border-bottom: solid $colour $size;
+	border-bottom-color: $borderColour;
+}
+
+@mixin triangle-left($size, $colour, $borderColour) {
+	height: 0;
+	width: 0;
+	content: " ";
+	border-top: solid transparent $size;
+	border-bottom: solid transparent $size;
+	border-right: solid $colour $size;
+	border-right-color: $borderColour;
 }

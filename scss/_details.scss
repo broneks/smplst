@@ -1,19 +1,19 @@
 #details {
-	// Paperclip icons 
+	// Paperclip Icons 
 	.icon-paperclip {
 		padding-right: 2px;
 		opacity: 0.3;
 		font-size: 0.8em;
 	}
 
-	// Title of message
+	// Title of Message
 	h2 {
 		display: inline-block;
 		padding-left: 2%;
 		font-size: 1.4em;
 	}
 
-	// Reply and close icons
+	// Reply and Close Icons
 	#options {
 		margin-top: 10px;
 		padding: 2px 0 0 0;
@@ -40,13 +40,13 @@
 			}
 		}
 
-		// Date message was sent
+		// Date Message Was Sent
 		#date {
 			padding: 12px 0 0 0;
 		}
 	}
 
-	// files enclosed button
+	// Files Enclosed Button
 	#files-enclosed {
 		width: 100%;
 		padding: 16px 6px;
@@ -58,13 +58,77 @@
 		}
 	}
 
-	// reply section
+	// Reply Section
 	#reply {
 		background-color: $lightgray;
 		border-top: 1px solid $bordergray;
 
-		textarea {
-			padding: 15px;
+		#answering, #forward {
+			position: relative;
+			padding: 20px 0;
+		}
+
+		#answering {
+			// CSS Triangles
+			&:before,
+			&:after {
+				z-index: 100;
+				position: absolute;
+				left: 50%;
+				bottom: -1px;
+				margin-left: -9px;
+				@include triangle-up(9px, #fff, none);
+			}
+			&:before {
+				z-index: 99;
+				position: absolute;
+				left: 50%;
+				bottom: -1px;
+				margin-left: -10px;
+				@include triangle-up(10px, #fff, $bordergray);
+			}
+		}
+
+		#inputarea {
+			background-color: #fff;
+			border: 1px solid $bordergray;
+
+			textarea {
+				margin-bottom: 0;
+				padding: 15px;
+				resize: none;
+				box-shadow: none;
+				border: 0;
+			}
+
+			#downloading {
+				// display: none;
+				margin: 7px;
+				background-color: $lightgray;
+				border: 1px solid $bordergray;
+				@include border-radius(3px);
+
+				#progress, #filename { padding: 10px; }
+
+				#filename { color: #555; }
+
+				// Progress Bar
+				#progress-bar-outer {
+					display: inline-block;
+					width: 85%;
+					margin-right: 7px;
+					border: 1px solid $bordergray;
+					background-color: #fff;
+				}
+
+				#progress-bar-inner {
+					height: 16px;
+					width: 73%;
+					background-color: $lightblue;
+				}
+
+				#cancel-download { font-size: 0.8em; }
+			}
 		}
 	}
 }
