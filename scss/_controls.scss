@@ -1,0 +1,36 @@
+#controls {
+	h2 {
+		font-size: 1.5em;
+	}
+
+	#search {
+		border-top: 1px solid $bordergray;
+		border-bottom: 1px solid $bordergray;
+
+		i {
+			margin-right: 15px;
+			vertical-align: middle;
+			font-size: 1.1em;
+		}
+
+		#search-input {
+			display: inline-block;
+			width: 84%;
+			padding-left: 0;
+			padding-right: 0;
+			box-shadow: none;
+			border: 0;
+			letter-spacing: 0.07em;
+			border-bottom: 2px solid $bordergray;
+			background-color: transparent;
+		}
+	}
+
+	#items-list {
+		margin: 0;
+		list-style: none;
+
+		li {
+		}
+	}
+}

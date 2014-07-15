@@ -48,36 +48,47 @@ img {
 //-- General styles --//
 
 body,
-h1, h3, h4, h5, h6,
-p, span, textarea {
+h1, h4, h5, h6,
+p, span, textarea, input[type=text] {
 	color: #999;
 }
 
-h2, button { color: #555; }
-
-a {
-    color: inherit;
-
-    &:hover { color: #555; }
-}
+h2, h3, button { color: #555; }
 
 i { opacity: .5; }
 
-textarea { font-size: 1em; }
+a {
+    color: inherit;
+    &:hover { color: #555; }
+}
+
+textarea, input[type=text] { 
+	font-size: 1em; 
+}
 
 
 //-- Main Content Area --//
 
-#side-menu,
-#controls {
+// Padding
+
+#side-menu {
 	padding: 30px 25px;
 }
-#details article {
-	padding: 30px 25px 0;
+
+#controls {
+	h2      { padding: 30px 25px; }
+	#search { padding: 15px 25px; }
+
+	#items-list li { padding: 10px 25px; }
 }
-#details #reply {
-	padding: 0 25px 60px;
+
+#details {
+	article { padding: 30px 25px 0; }
+	#reply  { padding: 0 25px 60px; }
 }
+
+
+// Section Colours
 
 #side-menu {
 	background-color: $darkgray;
@@ -86,8 +97,16 @@ textarea { font-size: 1em; }
 #controls {
 	background-color: $midgray;
 	border-right: 1px solid $bordergray;
+
+	#items-list { 
+		background-color: $lightergray; 
+		
+		li + li { border-top: 1px solid $bordergray; }
+	}
 }
 
 #details {
 	background-color: $lightergray;
+
+	#reply { background-color: $lightgray; }
 }

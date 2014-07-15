@@ -1,12 +1,19 @@
 
 @media screen and (max-width: 1250px) {
-	#details {
+	#controls {
 		h2 {
+			text-align: center;
+			font-size: 1.3em;
+		}
+	}
+
+	#details {
+		h3 {
 			font-size: 1.2em;
 		}
 
 		#user-info {
-			h3 {
+			h4 {
 				font-size: 1em;
 			}
 			#date {
@@ -19,6 +26,14 @@
 @media screen and (max-width: 1025px) {
 	#top-header #top-toolbar ul { border-left: 0; }
 
+	#controls #items-list {
+		max-height: 200px;
+		overflow-y: auto;
+		background-color: #fff;
+	}
+
+	#details { border-top: 2px solid $darkblue; }
+
 	#reply {
 		#answering, #forward {
 			text-align: center;
@@ -27,7 +42,7 @@
 }
 
 @media screen and (max-width: 641px) {
-	p, textarea, span, button { 
+	p, textarea, span, button, input[type=text] { 
 		font-size: 0.9em !important; 
 	}
 

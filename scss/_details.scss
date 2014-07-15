@@ -7,7 +7,7 @@
 	}
 
 	// Title of Message
-	h2 {
+	h3 {
 		display: inline-block;
 		padding-left: 2%;
 		font-size: 1.4em;
@@ -30,7 +30,7 @@
 		border-bottom: 1px solid $midgray;
 		
 		// Username
-		h3 {
+		h4 {
 			padding: 5px 0 0 10px;
 			font-size: 1.2em;
 
@@ -60,7 +60,6 @@
 
 	// Reply Section
 	#reply {
-		background-color: $lightgray;
 		border-top: 1px solid $bordergray;
 
 		#answering, #forward {
@@ -127,7 +126,7 @@
 					background-color: $lightblue;
 				}
 
-				#cancel-download { font-size: 0.8em; }
+				#cancel-download { font-size: 0.7em; }
 			}
 		}
 	}
