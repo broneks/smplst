@@ -52,6 +52,8 @@
 	}
 
 	#side-menu {
+		padding-bottom: 0;
+
 		li { padding-bottom: 10px; }
 
 		.sub-items li {
@@ -60,6 +62,8 @@
 			a { padding: 7px 3px; }
 		}
 
-		#email #compose-new { padding: 7px 3px; }
+		#email {
+			#compose-new { padding: 7px 3px; }
+		}
 	}
 }
