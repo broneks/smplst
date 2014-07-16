@@ -34,7 +34,7 @@
 			padding: 5px 0 0 10px;
 			font-size: 1.2em;
 
-			span {
+			.to {
 				color: $lightblue;
 				font-weight: bold;
 			}
@@ -45,6 +45,8 @@
 			padding: 12px 0 0 0;
 		}
 	}
+
+	#message-content { margin-bottom: 10px; }
 
 	// Files Enclosed Button
 	#files-enclosed {

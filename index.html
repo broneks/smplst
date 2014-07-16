@@ -63,7 +63,7 @@
 	</div>
 
       <!-- Main Content -->
-      <div class="row fullWidth">
+      <div class="row fullWidth" ng-controller="emailCtrl">
 
             <!-- ......... -->
             <!-- Side Menu -->
@@ -73,6 +73,7 @@
                         <li id="profile" class="small-3 large-12 columns">
                               <a href="#">
                                     <i class="icon icon-user icon-white"></i>
+
                                     <p>PROFILE</p>
                               </a>
                         </li>
@@ -80,6 +81,7 @@
                         <li id="email" class="small-3 large-12 columns">
                               <a href="#">
                                     <i class="icon icon-envelope icon-white"></i>
+
                                     <p>EMAIL</p>
                               </a>
 
@@ -92,10 +94,10 @@
                                           </div>
                                     </li>
 
-                                    <li>
+                                    <li class="selectedMenuItem">
                                           <a href="#" class="clearfix">
                                                 Inbox
-                                                <span id="total-messages" class="right">25</span>
+                                                <span id="inbox-count" class="right">{{ inboxCount }}</span>
                                           </a>
                                     </li>
 
@@ -120,6 +122,7 @@
                         <li id="docs" class="small-3 large-12 columns">
                               <a href="#">
                                     <i class="icon icon-book icon-white"></i>
+
                                     <p>DOCS</p>
                               </a>
                         </li>
@@ -127,6 +130,7 @@
                         <li id="stats" class="small-3 large-12 columns">
                               <a href="#">
                                     <i class="icon icon-stats icon-white"></i>
+
                                     <p>STATS</p>
                               </a>
                         </li>
@@ -139,29 +143,33 @@
                   </div>
             </nav>
 
-            <!-- ...... -->
-            <!-- Middle -->
-            <!-- ...... -->
+            <!-- ............... -->
+            <!-- Middle Controls -->
+            <!-- ............... -->
             <div id="middle" class="large-4 columns noPadding">
                   <h2>INBOX</h2>
 
                   <div id="search">
                         <i class="icon icon-search"></i>
 
-                        <input type="text" id="search-input" placeholder="Search">
+                        <input type="text" id="search-input" ng-model="search" placeholder="Search">
                   </div>
 
+                  <!-- List of Messages -->
                   <ul id="items-list">
-                        <li>
+                        <li ng-repeat="message in messages | filter: search | filter: {type: selType} | orderBy: -'date'" ng-class="{selectedMessage: message === selMessage}" ng-click="selectMessage(message)">
+
                               <header class="row collapse">
                                     <div class="small-8 columns">
                                           <input type="checkbox">
                                           
-                                          <h5>Sarah Connor</h5>
+                                          <h5>{{ message.username }}</h5>
                                     </div>
 
                                     <div class="small-4 text-right columns">
-                                          <time datetime="2014-12-15 10:00">Dec 15</time>
+                                          <i ng-if="message.files" class="icon icon-paperclip"></i>
+
+                                          <time datetime="{{ message.date }}">{{ message.date | date: 'MMM dd' }}</time>
                                     </div>
                               </header>
 
@@ -169,47 +177,31 @@
                                     <i class="icon icon-dislikes"></i>
                               </a>
 
-                              <h6>I've been hunted</h6>
+                              <h6>{{ message.title }}</h6> 
                               
-                              <span>- A crazy fucking robot (...)</span>
+                              <span>- {{ message.body | firstFragment }}</span>
                         </li>
 
-                        <li>
-                              <header class="row collapse">
-                                    <div class="small-8 columns">
-                                          <input type="checkbox">
-                                          
-                                          <h5>Jeremy Clarkson</h5>
-                                    </div>
+                        <!-- Fallback Prompts -->
 
-                                    <div class="small-4 text-right columns">
-                                          <i class="icon icon-paperclip"></i>
+                        <li ng-if="messages.length && !(messages | filter: search | filter: {type: selType}).length" class="text-center">No Results</li>
 
-                                          <time datetime="2014-12-15 19:00">Dec 15</time>
-                                    </div>
-                              </header>
-                              
-                              <a href="#">
-                                    <i class="icon icon-dislikes"></i>
-                              </a>
-
-                              <h6>The brand new season of top gear</h6>
-                              
-                              <span>- Hi Greg</span>
-                        </li>
+                        <li ng-if="!messages.length" class="text-center">You Have No Messages</li>
                   </ul>
             </div>
 
             <!-- ....... -->
             <!-- Details -->
             <!-- ....... -->
-            <div id="details" class="large-6 columns noPadding">
+            <div id="details" class="large-6 columns noPadding" ng-show="selMessage">
                   <article>
                         <header class="row collapse clearfix">
 
                               <!-- Reply and Close Icons -->
                               <div id="options" class="medium-3 columns right clearfix">
-                                    <a href="#" class="right">
+
+                                    <!-- closes message section -->
+                                    <a href="" class="right" ng-click="closeMessage()">
                                           <i class="icon icon-remove_2"></i>
                                     </a> 
 
@@ -218,13 +210,13 @@
                                     </a>
                               </div>
 
-                              <!-- Star and Message Title -->
+                              <!-- Star Icon and Message Title -->
                               <div class="medium-9 columns left">
                                     <a href="#">
                                           <i class="icon icon-dislikes"></i>
                                     </a>
 
-                                    <h3>The brand new season of Top Gear</h3>
+                                    <h3>{{ selMessage.title }}</h3>
                               </div>
                         </header>
 
@@ -232,34 +224,30 @@
                         <section id="user-info" class="row collapse">
 
                               <!-- Avatar -->
-                              <img src="img/trans.gif" class="jeremy left" height="40" width="40" alt="avatar">
+                              <img src="img/trans.gif" class="{{ selMessage.avatar }} left" height="40" width="40" alt="{{ selMessage.username }}">
                               
                               <!-- Username -->
                               <h4 class="left">
-                                    <a href="#">Jeremy Clarkson</a> 
+                                    <a href="#" class="from">{{ selMessage.username }}</a> 
                                     to 
-                                    <span>me</span>
+                                    <a href="#" class="to">{{ selMessage.to }}</a>
                               </h4>
 
                               <!-- Date -->
                               <span id="date" class="right">
                                     <i class="icon icon-paperclip"></i>
                               
-                                    <time datetime="2013-12-15 19:00">December 15, 2013</time>
+                                    <time datetime="{{ selMessage.date }}">{{ selMessage.date | date: 'MMM dd, yyyy' }}</time>
                               </span>
                         </section>
                         
                         <!-- Message Content -->
                         <div id="message-content" class="row collapse">
-                              <p>Hi Greg,</p>
-                              
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam velit itaque iste, doloribus, ab quae, explicabo similique numquam porro laborum ex impedit laboriosam ullam laudantium voluptatem minima molestias vel ut! Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
-                              <p>Cheers</p>
+                              <p>{{ selMessage.body }}</p>
                         </div>
 
                         <!-- Files Enclosed Button -->
-                        <div class="row collapse">
+                        <div class="row collapse" ng-if="selMessage.files">
                               <div class="small-7 small-centered medium-4 large-3 columns">
                                     <button id="files-enclosed" class="radius">
                                           <i class="icon icon-paperclip"></i>
@@ -281,12 +269,12 @@
       
                         <!-- Input Area -->
                         <div id="inputarea">
-                              <textarea cols="30" rows="10">Hello Jeremy, How are you?  
+                              <textarea cols="30" rows="10">Hello, How are you?  
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis ipsa ducimus, dolore repudiandae quidem perferendis, adipisci odit voluptatum in maxime deleniti molestiae autem laboriosam, ad soluta nobis. Sunt, et, recusandae!</textarea>
 
                               <!-- Downloading Files -->
-                              <div id="downloading" class="row collapse">
+                              <div id="downloading" class="row collapse" ng-if="selMessage.files">
                                     <span id="filename" class="medium-3 columns">My file enclosed.pdf</span>
 
                                     <!-- Progress Bar -->
@@ -295,7 +283,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis ipsa ducimus,
                                                 <div id="progress-bar-inner"></div>
                                           </div>
 
-                                          <a href="#" id="cancel-download">
+                                          <a href="" id="cancel-download" ng-click="cancelDownload()">
                                                 <i class="icon icon-remove_2"></i>
                                           </a>
                                     </div>

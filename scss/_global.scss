@@ -25,6 +25,15 @@ $bordergray: darken($midgray, 10%);
 
 .noPadding { padding: 0; }
 
+li.selectedMenuItem {
+	background-color: $darkgray;
+}
+
+li.selectedMessage { 
+	&, h5 { color: #fff; }
+	background-color: $lightblue; 
+}
+
 
 //-- Avatars --//
 
@@ -35,13 +44,14 @@ img {
 	&.brad     { background: url(../img/avatars.jpg) 0 0; }
 	&.jeremy   { background: url(../img/avatars.jpg) 0 -80px; }	
 	&.jack     { background: url(../img/avatars.jpg) -80px -40px; }
-	&.george   { background: url(../img/avatars.jpg) -320px -40px; }
 	&.anthony  { background: url(../img/avatars.jpg) -40px 0; }
 	&.jane     { background: url(../img/avatars.jpg) -240px -120px; }
 	&.anna     { background: url(../img/avatars.jpg) 0px -40px; }
 	&.michelle { background: url(../img/avatars.jpg) -120px -120px; }
 	&.safira   { background: url(../img/avatars.jpg) -520px -160px; }
 	&.sarah    { background: url(../img/avatars.jpg) -440px -120px; }
+	&.me       { background: url(../img/avatars.jpg) -280px 0; }
+	&.fshop    { background: url(../img/avatars.jpg) -440px -40px; }
 }
 
 

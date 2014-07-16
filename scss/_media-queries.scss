@@ -38,6 +38,11 @@
 	}
 
 	#side-menu {
+		.sub-items li {
+			margin-left: 1px;
+			margin-right: 1px;
+		}
+
 		#email > a:first-child:before {
 			@include triangle-left(0, none, none);
 		}
