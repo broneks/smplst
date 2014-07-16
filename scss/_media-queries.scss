@@ -68,7 +68,10 @@
 		}
 
 		#email {
-			#compose-new { padding: 7px 3px; }
+			#compose-new { 
+				padding: 7px 3px; 
+				font-size: 0.8em !important;
+			}
 		}
 	}
 }
