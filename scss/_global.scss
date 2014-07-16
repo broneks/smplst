@@ -34,6 +34,8 @@ li.selectedMessage {
 	background-color: $lightblue; 
 }
 
+li.gray { color: $darkgray; }
+
 
 //-- Avatars --//
 
@@ -51,6 +53,7 @@ img {
 	&.safira   { background: url(../img/avatars.jpg) -520px -160px; }
 	&.sarah    { background: url(../img/avatars.jpg) -440px -120px; }
 	&.me       { background: url(../img/avatars.jpg) -280px 0; }
+	&.spam     { background: url(../img/avatars.jpg) -280px -40px; }
 	&.fshop    { background: url(../img/avatars.jpg) -440px -40px; }
 }
 

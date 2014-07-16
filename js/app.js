@@ -3,24 +3,38 @@ var app = angular.module('simplest', []);
 app.controller('emailCtrl', ['$scope', 'messagesService', '$filter', function($scope, messagesService, $filter) {
 	'use strict';
 	
-	$scope.messages    = messagesService.getAll();
-	$scope.inboxCount  = $filter('filter')($scope.messages, { type: 'inbox' }).length;
-	// $scope.selMenuItem = 1;
-	$scope.selType     = 'inbox';
-	$scope.selMessage  = $scope.messages[1];
+	$scope.messages   = messagesService.getAll();
+	$scope.inboxCount = $filter('filter')($scope.messages, { type: 'inbox' }).length;
+	$scope.selType    = 'inbox';
+	$scope.selMessage = $scope.messages[1];
 
 	$scope.selectMessage = function(message) {
 		$scope.selMessage = message;
-		// angular.element('#downloading').show();
 	};
 
 	$scope.closeMessage = function() {
 		$scope.selMessage = null;
 	};
 
-	// $scope.changeMessagesType = function() {
-	// 	// $scope.closeMessage();
-	// };
+	$scope.changeType = function(obj) {
+		var _parent = $(obj.target).parent();
+
+		// prevent default action, clear search input field and close the current message
+		obj.preventDefault();
+		$scope.search = '';
+		$scope.closeMessage();
+
+		// jQuery / Angular's jqLite
+
+		// remove the 'selectedMenuItem' class from all '#sub-items' li tags
+		_parent.parent().children().removeClass('selectedMenuItem');
+
+		// add class to parent list item of current a tag
+		_parent.addClass('selectedMenuItem');
+
+		// set the selected message type to the value of the a tag's data attribute
+		$scope.selType = obj.target.attributes.data.value;
+	};
 }]);
 
 app.service('messagesService', function() {
@@ -136,6 +150,46 @@ app.service('messagesService', function() {
 			type:     'junk mail',
 			files:    false,
 			title:    'Buy Our Laptops',
+			body:     'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit saepe ratione in sunt quo reprehenderit explicabo voluptatem. Ut, excepturi delectus dicta voluptatum, molestiae voluptatibus enim neque natus aliquam quasi inventore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, enim. Sapiente cum quidem eum illo nihil cumque hic commodi porro! Labore fugit, voluptate excepturi assumenda repudiandae minus accusantium error reiciendis.'
+		},
+		{
+			username: 'Best Buy',
+			to:       'me',
+			avatar:   'fshop',
+			date:     '2014-02-19',
+			type:     'junk mail',
+			files:    false,
+			title:    'No! Buy Our Laptops!',
+			body:     'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit saepe ratione in sunt quo reprehenderit explicabo voluptatem. Ut, excepturi delectus dicta voluptatum, molestiae voluptatibus enim neque natus aliquam quasi inventore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, enim. Sapiente cum quidem eum illo nihil cumque hic commodi porro! Labore fugit, voluptate excepturi assumenda repudiandae minus accusantium error reiciendis.'
+		},
+		{
+			username: 'Spam-a-lot',
+			to:       'me',
+			avatar:   'spam',
+			date:     '2014-06-21',
+			type:     'trash',
+			files:    false,
+			title:    'You\'ve Won a Cruise!',
+			body:     'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit saepe ratione in sunt quo reprehenderit explicabo voluptatem. Ut, excepturi delectus dicta voluptatum, molestiae voluptatibus enim neque natus aliquam quasi inventore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, enim. Sapiente cum quidem eum illo nihil cumque hic commodi porro! Labore fugit, voluptate excepturi assumenda repudiandae minus accusantium error reiciendis.'
+		},
+		{
+			username: 'Spam-a-lot',
+			to:       'me',
+			avatar:   'spam',
+			date:     '2014-06-20',
+			type:     'trash',
+			files:    false,
+			title:    'You\'ve Won a Cruise!',
+			body:     'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit saepe ratione in sunt quo reprehenderit explicabo voluptatem. Ut, excepturi delectus dicta voluptatum, molestiae voluptatibus enim neque natus aliquam quasi inventore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, enim. Sapiente cum quidem eum illo nihil cumque hic commodi porro! Labore fugit, voluptate excepturi assumenda repudiandae minus accusantium error reiciendis.'
+		},
+		{
+			username: 'Spam-a-lot',
+			to:       'me',
+			avatar:   'spam',
+			date:     '2014-06-19',
+			type:     'trash',
+			files:    false,
+			title:    'You\'ve Won a Cruise!',
 			body:     'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit saepe ratione in sunt quo reprehenderit explicabo voluptatem. Ut, excepturi delectus dicta voluptatum, molestiae voluptatibus enim neque natus aliquam quasi inventore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, enim. Sapiente cum quidem eum illo nihil cumque hic commodi porro! Labore fugit, voluptate excepturi assumenda repudiandae minus accusantium error reiciendis.'
 		}
 	];

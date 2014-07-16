@@ -95,26 +95,26 @@
                                     </li>
 
                                     <li class="selectedMenuItem">
-                                          <a href="#" class="clearfix">
+                                          <a href="#" class="clearfix" data="inbox" ng-click="changeType($event)">
                                                 Inbox
                                                 <span id="inbox-count" class="right">{{ inboxCount }}</span>
                                           </a>
                                     </li>
 
                                     <li>
-                                          <a href="#">Drafts</a>
+                                          <a href="#" data="drafts" ng-click="changeType($event)">Drafts</a>
                                     </li>
 
                                     <li>
-                                          <a href="#">Sent</a>
+                                          <a href="#" data="sent" ng-click="changeType($event)">Sent</a>
                                     </li>
 
                                     <li>
-                                          <a href="#">Trash</a>
+                                          <a href="#" data="trash" ng-click="changeType($event)">Trash</a>
                                     </li>
 
                                     <li>
-                                          <a href="#">Junk Mail</a>
+                                          <a href="#" data="junk mail" ng-click="changeType($event)">Junk Mail</a>
                                     </li>
                               </ul>
                         </li>
@@ -158,13 +158,14 @@
 
                   <!-- List of Messages -->
                   <ul id="items-list">
-                        <li ng-repeat="message in messages | filter: search | filter: {type: selType} | orderBy: -'date'" ng-class="{selectedMessage: message === selMessage}" ng-click="selectMessage(message)">
+                        <li ng-repeat="message in messages | filter: search | filter: {type: selType} | orderBy: '-date'" ng-class="{selectedMessage: message === selMessage}" ng-click="selectMessage(message)">
 
                               <header class="row collapse">
                                     <div class="small-8 columns">
                                           <input type="checkbox">
                                           
-                                          <h5>{{ message.username }}</h5>
+                                          <h5 ng-if="message.type !== 'sent'">{{ message.username }}</h5>
+                                          <h5 ng-if="message.type === 'sent'">To {{ message.to }}</h5>
                                     </div>
 
                                     <div class="small-4 text-right columns">
@@ -185,7 +186,7 @@
 
                         <!-- Fallback Prompts -->
 
-                        <li ng-if="messages.length && !(messages | filter: search | filter: {type: selType}).length" class="text-center">No Results</li>
+                        <li ng-if="messages.length && !(messages | filter: search | filter: {type: selType}).length" class="text-center gray">No Results</li>
 
                         <li ng-if="!messages.length" class="text-center">You Have No Messages</li>
                   </ul>
@@ -294,10 +295,10 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis ipsa ducimus,
             </div>
       </div>
 
-	<script src="js/vendor/jquery.js"></script>
-	<script src="js/vendor/foundation.min.js"></script>
-      <script src="js/vendor/angular.min.js"></script>
-      <script src="js/app.js"></script>
-	<script>$(document).foundation();</script>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/foundation.min.js"></script>
+    <script src="js/vendor/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script>$(document).foundation();</script>
 </body>
 </html>
