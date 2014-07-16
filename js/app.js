@@ -17,23 +17,29 @@ app.controller('emailCtrl', ['$scope', 'messagesService', '$filter', function($s
 	};
 
 	$scope.changeType = function(obj) {
-		var _parent = $(obj.target).parent();
+		var objParent = $(obj.target).parent();
 
-		// prevent default action, clear search input field and close the current message
+		// prevent default link action
 		obj.preventDefault();
-		$scope.search = '';
-		$scope.closeMessage();
 
-		// jQuery / Angular's jqLite
+		// if obj parent (li tag) is not already selected, change the message type
+		if (!objParent.hasClass('selectedMenuItem')) {
 
-		// remove the 'selectedMenuItem' class from all '#sub-items' li tags
-		_parent.parent().children().removeClass('selectedMenuItem');
+			// clear search input field and close the current message
+			$scope.search = '';
+			$scope.closeMessage();
 
-		// add class to parent list item of current a tag
-		_parent.addClass('selectedMenuItem');
+			// jQuery / Angular's jqLite
 
-		// set the selected message type to the value of the a tag's data attribute
-		$scope.selType = obj.target.attributes.data.value;
+			// remove the 'selectedMenuItem' class from all '#sub-items' li tags
+			objParent.parent().children().removeClass('selectedMenuItem');
+
+			// add class to parent list item of current a tag
+			objParent.addClass('selectedMenuItem');
+
+			// set the selected message type to the value of the a tag's data attribute
+			$scope.selType = obj.target.attributes.data.value;
+		}
 	};
 }]);
 

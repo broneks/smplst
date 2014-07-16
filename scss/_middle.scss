@@ -27,6 +27,8 @@
 	}
 
 	#items-list li {
+		border-left: 1px solid $bordergray;
+
 		input[type=checkbox] { margin-right: 5px; }
 			
 		h5, h6 { display: inline-block; }

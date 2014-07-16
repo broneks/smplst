@@ -25,6 +25,12 @@
 	#top-toolbar {
 		background-color: $lightblue;
 
+		h2 {
+			padding: 30px 10px 0;
+			font-size: 1.1em;
+			color: #fff;
+		}
+
 		ul {
 			padding: 29.5px 0;
 			border-left: 2px solid $darkblue;

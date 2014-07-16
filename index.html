@@ -27,10 +27,10 @@
       		
                   <!-- Top Toolbar -->
                   <nav id="top-toolbar" class="large-10 columns clearfix">
-                  	<ul class="large-5 small-12 columns right">
+                  	<ul class="small-12 large-5 columns right">
                   		<li class="small-2 small-offset-1 columns">
                   			<a href="#">
-                  				<i class="icon icon-inbox icon-white" title="inbox"></i>
+                  				<i class="icon icon-inbox icon-white" title="primary"></i>
                   			</a>
                   		</li>
 
@@ -58,6 +58,8 @@
                   			</a>
                   		</li>
                   	</ul>
+
+                        <h2 class="small-12 large-3 columns left">PRIMARY</h2>
                   </nav>
 		</header>
 	</div>
@@ -244,9 +246,9 @@
                         </section>
                         
                         <!-- Message Content -->
-                        <div id="message-content" class="row collapse">
+                        <section id="message-content" class="row collapse">
                               <p>{{ selMessage.body }}</p>
-                        </div>
+                        </section>
 
                         <!-- Files Enclosed Button -->
                         <div class="row collapse" ng-if="selMessage.files">
