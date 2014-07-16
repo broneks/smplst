@@ -21,16 +21,28 @@
 @media screen and (max-width: 1024px) {
 	#top-header #top-toolbar ul { border-left: 0; }
 
-	#middle #items-list {
-		max-height: 273px;	// 3 list items tall (71 * 3)
-		overflow-y: auto;
-		background-color: #fff;
+	#middle {
+		h2 { padding: 15px 25px; } 
+
+		#items-list {
+			max-height: 273px;	// 3 list items tall (71 * 3)
+			overflow-y: auto;
+			background-color: #fff;
+		}
 	}
 
 	#details { border-top: 3px solid $darkblue; }
 
 	#reply {
 		#answering, #forward { text-align: center; }
+	}
+
+	#side-menu {
+		#email > a:first-child:before {
+			@include triangle-left(0, none, none);
+		}
+
+		#my-account { margin-top: 20px; }
 	}
 }
 
