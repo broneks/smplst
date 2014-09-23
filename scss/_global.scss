@@ -25,10 +25,6 @@ $bordergray: darken($midgray, 10%);
 
 .noPadding { padding: 0; }
 
-li.selectedMenuItem {
-	background-color: $darkgray;
-}
-
 li.selectedMessage { 
 	&, h5 { color: #fff; }
 	background-color: $lightblue; 

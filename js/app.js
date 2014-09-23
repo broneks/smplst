@@ -24,6 +24,9 @@ angular.module('simplest', ['services'])
 			$scope.search  = '';
 			$scope.selType = type.value;
 			$scope.closeMessage();
+
+			jQuery('.sub-items li').css('background-color', 'transparent');
+			obj.target.parentElement.style = 'background-color: #262a33';
 		}
 	};
 }])
