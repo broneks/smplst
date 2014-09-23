@@ -66,10 +66,8 @@
 
       <!-- Main Content -->
       <div class="row fullWidth" ng-controller="emailCtrl">
-
-            <!-- ......... -->
-            <!-- Side Menu -->
-            <!-- ......... -->
+            
+            <!-- SIDE MENU -->
             <nav id="side-menu" class="large-2 columns">
                   <ul class="row collapse">
                         <li id="profile" class="small-3 large-12 columns">
@@ -97,26 +95,26 @@
                                     </li>
 
                                     <li class="selectedMenuItem">
-                                          <a href="#" class="clearfix" data="inbox" ng-click="changeType($event)">
+                                          <a href="#" class="clearfix" data-type="inbox" ng-click="changeType($event)">
                                                 Inbox
-                                                <span id="inbox-count" class="right">{{ inboxCount }}</span>
+                                                <span id="inbox-count" class="right" inbox-count>{{ inboxCount }}</span>
                                           </a>
                                     </li>
 
                                     <li>
-                                          <a href="#" data="drafts" ng-click="changeType($event)">Drafts</a>
+                                          <a href="#" data-type="drafts" ng-click="changeType($event)">Drafts</a>
                                     </li>
 
                                     <li>
-                                          <a href="#" data="sent" ng-click="changeType($event)">Sent</a>
+                                          <a href="#" data-type="sent" ng-click="changeType($event)">Sent</a>
                                     </li>
 
                                     <li>
-                                          <a href="#" data="trash" ng-click="changeType($event)">Trash</a>
+                                          <a href="#" data-type="trash" ng-click="changeType($event)">Trash</a>
                                     </li>
 
                                     <li>
-                                          <a href="#" data="junk mail" ng-click="changeType($event)">Junk Mail</a>
+                                          <a href="#" data-type="junk mail" ng-click="changeType($event)">Junk Mail</a>
                                     </li>
                               </ul>
                         </li>
@@ -145,9 +143,7 @@
                   </div>
             </nav>
 
-            <!-- ............... -->
-            <!-- Middle Controls -->
-            <!-- ............... -->
+            <!-- MIDDLE -->
             <div id="middle" class="large-4 columns noPadding">
                   
                   <h2>{{ selType | uppercase }}</h2>
@@ -194,9 +190,7 @@
                   </ul>
             </div>
 
-            <!-- ....... -->
-            <!-- Details -->
-            <!-- ....... -->
+            <!-- DETAILS -->
             <div id="details" class="large-6 columns noPadding" ng-show="selMessage">
                   <article>
                         <header class="row collapse clearfix">
@@ -287,7 +281,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis ipsa ducimus,
                                                 <div id="progress-bar-inner"></div>
                                           </div>
 
-                                          <a href="" id="cancel-download" ng-click="cancelDownload()">
+                                          <a href="" id="cancel-download">
                                                 <i class="icon icon-remove_2"></i>
                                           </a>
                                     </div>
@@ -300,6 +294,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis ipsa ducimus,
     <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/foundation.min.js"></script>
     <script src="js/vendor/angular.min.js"></script>
+    <script src="js/services.js"></script>
     <script src="js/app.js"></script>
     <script>$(document).foundation();</script>
 </body>
