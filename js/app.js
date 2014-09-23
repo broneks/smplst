@@ -1,6 +1,6 @@
 angular.module('simplest', ['services'])
 
-.controller('emailCtrl', ['$scope', 'messagesService', '$filter', function($scope, messagesService) {
+.controller('emailCtrl', ['$scope', 'messagesService', function($scope, messagesService) {
 	'use strict';
 	
 	$scope.messages   = messagesService.getAll();
